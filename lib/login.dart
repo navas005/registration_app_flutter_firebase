@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:registration_app_flutter_firebase/forgot.dart';
+import 'package:registration_app_flutter_firebase/service.dart';
 import 'package:registration_app_flutter_firebase/signup.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
 
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  TextEditingController emailcontroller =TextEditingController();
+  TextEditingController passwordcontroller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +45,7 @@ class Login extends StatelessWidget {
                   ),
                 ),
               ),SizedBox(height: 10,),
-              TextField(
+              TextField(controller: emailcontroller,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -60,7 +68,7 @@ class Login extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10,),
-              TextField(
+              TextField(controller: passwordcontroller,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -94,7 +102,7 @@ class Login extends StatelessWidget {
                 height: 45,
                 width: 350,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {login(email: emailcontroller.text, password: passwordcontroller.text, context: context);},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueAccent,
                   ),

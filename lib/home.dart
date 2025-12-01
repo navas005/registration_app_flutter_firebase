@@ -10,12 +10,14 @@ class Home extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Welcome",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
+          Center(
+            child: Text(
+              "Welcome Home",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:registration_app_flutter_firebase/login.dart';
+import 'package:registration_app_flutter_firebase/service.dart';
 
-class Forgot extends StatelessWidget {
+class Forgot extends StatefulWidget {
   const Forgot({super.key});
 
+  @override
+  State<Forgot> createState() => _ForgotState();
+}
+
+class _ForgotState extends State<Forgot> {
+  TextEditingController emailcontroller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +45,7 @@ class Forgot extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            TextField(
+            TextField( controller: emailcontroller,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -54,7 +61,7 @@ class Forgot extends StatelessWidget {
               height: 45,
               width: 350,
               child: ElevatedButton(
-                onPressed: (){},
+                onPressed: (){reset(email: emailcontroller.text, context:context);},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
                 ),
