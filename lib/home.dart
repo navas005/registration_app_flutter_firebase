@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,14 +12,7 @@ class Home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text(
-              "Welcome Home",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            child: Lottie.asset("assets/Welcome_Animation.json")
           ),
         ],
       ),
